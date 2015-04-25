@@ -11,10 +11,12 @@ class User < ActiveRecord::Base
     presence: true
 
   validates :username,
-    presence: true
+    presence: true,
+    uniqueness: true
 
   validates :email,
     presence: true,
+    uniqueness: true,
     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :sign_up }
 
   validates :password,

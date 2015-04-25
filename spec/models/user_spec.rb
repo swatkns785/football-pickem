@@ -16,4 +16,20 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:email).when(nil, 'word', '.com', 'word@com',
     'word.com' )}
 
+  it "requires a unique email" do
+    user = FactoryGirl.create(:user)
+    other_user = FactoryGirl.create(:user)
+    other_user.email = user.email
+    expect(other_user).to_not be_valid
+    expect(other_user.errors).to_not be_blank
+  end
+
+  it "requires a unique username" do
+    user = FactoryGirl.create(:user)
+    other_user = FactoryGirl.create(:user)
+    other_user.username = user.username
+    expect(other_user).to_not be_valid
+    expect(other_user.errors).to_not be_blank
+  end
+
 end
