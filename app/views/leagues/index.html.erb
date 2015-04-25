@@ -1,0 +1,3 @@
+<% @leagues.each do |league| %>
+  <p class="index-league-title"><%= link_to league.title, league_path(league) %></p>
+<% end %>
