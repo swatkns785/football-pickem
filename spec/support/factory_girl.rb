@@ -10,4 +10,9 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :league do
+    association :user
+    sequence(:title) {|n| "Best League #{n}"}
+    description 'This is the best league ever!'
+  end
 end
