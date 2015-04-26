@@ -23,6 +23,21 @@ class LeaguesController < ApplicationController
     end
   end
 
+  def edit
+    @league = League.find(params[:id])
+  end
+
+  def update
+    @league = League.find(params[:id])
+
+    if @league.update_attributes(league_params)
+      redirect_to league_path(@league)
+      flash[:notice] = "Your league has been successfully updated."
+    else
+      render :edit
+    end
+  end
+
   private
 
   def league_params

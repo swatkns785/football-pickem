@@ -1,6 +1,7 @@
 <h3><%= @league.title %></h3>
 
 <p>League Owner:<%= @league.user.name %></p>
+<h5><%= link_to 'Edit Your League', edit_league_path(@league) %></h5>
 
 <p>Description:</p>
 <p><%= @league.description %></p>
