@@ -14,9 +14,6 @@ feature 'a user requests to join a league', %q(
 
   scenario 'user successfully requests to join a league' do
     league = FactoryGirl.create(:league)
-    create_league(league)
-
-    click_link 'Sign Out'
 
     requestor = FactoryGirl.create(:user)
     sign_in_as(requestor)
