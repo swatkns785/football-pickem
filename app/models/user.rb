@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :leagues
+  has_many :membership_requests
+  has_many :memberships
 
   validates :first_name,
     presence: true

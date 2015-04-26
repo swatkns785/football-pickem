@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
+  it { should have_many :leagues }
+  it { should have_many :membership_requests }
+
   it { should have_valid(:first_name).when('Joe', 'Michael') }
   it { should_not have_valid(:first_name).when(nil, '') }
 

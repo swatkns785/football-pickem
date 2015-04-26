@@ -15,4 +15,14 @@ FactoryGirl.define do
     sequence(:title) {|n| "Best League #{n}"}
     description 'This is the best league ever!'
   end
+
+  factory :membership_request do
+    association :user
+    association :league
+  end
+
+  factory :membership do
+    association :user
+    association :league
+  end
 end

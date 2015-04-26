@@ -5,6 +5,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    @requests = @league.membership_requests
   end
 
   def new
@@ -16,6 +17,8 @@ class LeaguesController < ApplicationController
     @league.user = current_user
 
     if @league.save
+      @owner = Membership.new(user: current_user, owner: true)
+      @owner.save
       redirect_to league_path(@league)
       flash[:notice] = "Your league has been successfully created."
     else
