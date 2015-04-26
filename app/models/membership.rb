@@ -8,4 +8,7 @@ class Membership < ActiveRecord::Base
   validates :user,
     presence: true,
     uniqueness: { scope: :league_id }
+
+  validates_inclusion_of :owner,
+    in: [true, false]
 end

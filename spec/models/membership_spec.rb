@@ -11,10 +11,11 @@ RSpec.describe Membership, type: :model do
   it { should_not have_valid(:user).when(nil) }
 
   it 'requires a unique user_id and league_id' do
-    membership = FactoryGirl.create(:membership)
+    membership = FactoryGirl.create(:membership, owner: false)
     other_membership = FactoryGirl.build(:membership,
       league: membership.league,
-      user: membership.user)
+      user: membership.user,
+      owner: false)
     expect(other_membership).to_not be_valid
     expect(other_membership.errors[:user]).to_not be_blank
   end
