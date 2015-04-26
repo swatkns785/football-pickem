@@ -19,6 +19,8 @@ feature 'league owner deletes league', %q(
 
     click_link "Delete League"
     expect(page).to have_content "Your league has been deleted."
+
+    expect(page).to_not have_content(league.title)
   end
 
 end
