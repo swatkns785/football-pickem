@@ -20,4 +20,9 @@ FactoryGirl.define do
     association :user
     association :league
   end
+
+  factory :membership do
+    association :user
+    association :league
+  end
 end
