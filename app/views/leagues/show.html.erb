@@ -4,7 +4,7 @@
 
 <% if current_user != @league.user %>
 
-  <p><%= link_to 'Join League', league_membership_requests_path(@request), method: :post %></p>
+  <p><%= link_to 'Join League', league_membership_requests_path(@league), method: :post %></p>
 
 <% else %>
 

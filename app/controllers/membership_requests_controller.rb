@@ -1,11 +1,11 @@
 class MembershipRequestsController < ApplicationController
 
   def create
-    @league = League.where(id: params[:league_id])
+    @league = League.find_by(id: params[:league_id])
 
     @request = MembershipRequest.new
-    @request.user = current_user
-    @request.league = @league
+    @request.user_id = current_user.id
+    @request.league_id = @league.id
     if @request.save
       flash[:notice] = 'Request to join league sent.'
       redirect_to league_path(@league)
