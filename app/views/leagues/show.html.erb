@@ -1,8 +1,17 @@
 <h3><%= @league.title %></h3>
 
 <p>League Owner:<%= @league.user.name %></p>
-<h5><%= link_to 'Edit Your League', edit_league_path(@league) %></h5>
-<h5><%= link_to 'Delete League', league_path(@league), method: :delete %></h5>
+
+<% if current_user != @league.user %>
+
+  <p><%= link_to 'Join League', league_membership_requests_path(@request), method: :post %></p>
+
+<% else %>
+
+  <h5><%= link_to 'Edit Your League', edit_league_path(@league) %></h5>
+  <h5><%= link_to 'Delete League', league_path(@league), method: :delete %></h5>
+
+<% end %>
 
 <p>Description:</p>
 <p><%= @league.description %></p>

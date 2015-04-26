@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe League, type: :model do
 
+  it { should belong_to :user }
+  it { should have_many :membership_requests }
+
   it { should have_valid(:title).when('Best League', 'League 1234') }
   it { should_not have_valid(:title).when(nil, '') }
 
