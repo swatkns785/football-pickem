@@ -8,7 +8,7 @@ feature 'a user edits a league', %q(
 
 ) do
 
-  scenario 'successfully edit league', focus: true do
+  scenario 'successfully edit league' do
     league = FactoryGirl.create(:league)
     create_league(league)
 

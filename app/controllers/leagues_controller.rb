@@ -38,6 +38,13 @@ class LeaguesController < ApplicationController
     end
   end
 
+  def destroy
+    @league = current_user.leagues.find(params[:id])
+    @league.destroy
+    flash[:notice] = "Your league has been deleted."
+    redirect_to root_path
+  end
+
   private
 
   def league_params
