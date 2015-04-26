@@ -1,6 +1,6 @@
 <h3><%= @league.title %></h3>
 
-<p>League Owner:<%= @league.user.name %></p>
+<p>League Owner: <%= @league.user.name %></p>
 
 <% if current_user != @league.user %>
 
@@ -10,6 +10,11 @@
 
   <h5><%= link_to 'Edit Your League', edit_league_path(@league) %></h5>
   <h5><%= link_to 'Delete League', league_path(@league), method: :delete %></h5>
+
+  <% @requests.each do |request| %>
+    <p><%= request.user.username %></p>
+    <p><%= link_to 'Approve Request', league_memberships_path(request.user_id), method: :post %></p>
+  <% end %>
 
 <% end %>
 
