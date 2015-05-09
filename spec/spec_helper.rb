@@ -1,4 +1,6 @@
 require 'database_cleaner'
+require 'coveralls'
+Coveralls.wear!('rails')
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
