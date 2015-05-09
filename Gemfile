@@ -21,5 +21,9 @@ group :development, :test do
   gem 'database_cleaner'
 end
 
+group :test do
+  gem 'coveralls', require: false
+end
+
 gem 'devise'
 gem 'foundation-rails'
