@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   it { should have_many :leagues }
   it { should have_many :membership_requests }
 
@@ -34,5 +33,4 @@ RSpec.describe User, type: :model do
     expect(other_user).to_not be_valid
     expect(other_user.errors).to_not be_blank
   end
-
 end
