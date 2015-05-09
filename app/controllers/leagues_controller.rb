@@ -6,6 +6,7 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     @requests = @league.membership_requests
+    @members = Membership.where(league_id: params[:id])
   end
 
   def new

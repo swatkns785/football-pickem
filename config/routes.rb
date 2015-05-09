@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :leagues do
     resources :membership_requests, only: :create
-    resources :memberships, only: :create
+    resources :memberships, only: [ :create, :destroy ]
   end
 end

@@ -6,4 +6,8 @@ class League < ActiveRecord::Base
   validates :title,
     presence: true,
     uniqueness: true
+
+  def is_league_member(user)
+    memberships.find_by(user_id: user.id, league_id: params[:id])
+  end
 end

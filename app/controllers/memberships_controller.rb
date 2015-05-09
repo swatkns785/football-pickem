@@ -15,4 +15,11 @@ class MembershipsController < ApplicationController
     end
   end
 
+  def destroy
+    @league = League.find(params[:league_id])
+    current_user.memberships.destroy(params[:id])
+    flash[:alert] = "You have successfully left #{@league.title}."
+    redirect_to league_path(@league)
+  end
+
 end
