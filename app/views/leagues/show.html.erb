@@ -20,3 +20,8 @@
 
 <p>Description:</p>
 <p><%= @league.description %></p>
+
+<% @members.each do |member| %>
+  <p><%= member.user.name %></p>
+  <p><%= link_to 'Leave League', league_membership_path(@league, member), method: :delete %></p>
+<% end %>
