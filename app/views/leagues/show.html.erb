@@ -23,5 +23,7 @@
 
 <% @members.each do |member| %>
   <p><%= member.user.name %></p>
-  <p><%= link_to 'Leave League', league_membership_path(@league, member), method: :delete %></p>
+  <% if current_user == member.user %>
+    <p><%= link_to 'Leave League', league_membership_path(@league, member), method: :delete %></p>
+  <% end %>
 <% end %>

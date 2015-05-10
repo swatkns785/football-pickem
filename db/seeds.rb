@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..17).each do |week|
+  Week.create(week_number: week)
+  puts "Created week ##{week}."
+end

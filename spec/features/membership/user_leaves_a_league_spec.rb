@@ -18,5 +18,4 @@ feature 'user leaves a league', %q(
     click_link "Leave League"
     expect(page).to have_content("You have successfully left #{league.title}.")
   end
-
 end
