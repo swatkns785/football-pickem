@@ -3,6 +3,7 @@ class League < ActiveRecord::Base
   has_many :membership_requests, dependent: :destroy
   has_many :memberships, dependent: :destroy
   has_many :league_weeks, dependent: :destroy
+  has_many :league_games, dependent: :destroy
 
   after_create :create_league_weeks
   after_create :create_league_owner
