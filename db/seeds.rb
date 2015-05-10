@@ -8,10 +8,10 @@ require 'csv'
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 ###seed method for weeks
-# (1..17).each do |week|
-#   Week.create(week_number: week)
-#   puts "Created week ##{week}."
-# end
+(1..17).each do |week|
+  Week.create(week_number: week)
+  puts "Created week ##{week}."
+end
 
 ###Seed method for games
 csv = CSV.read('2015_regular_season_schedule.csv', headers: true)
