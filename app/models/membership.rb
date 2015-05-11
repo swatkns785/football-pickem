@@ -1,6 +1,7 @@
 class Membership < ActiveRecord::Base
   belongs_to :user
   belongs_to :league
+  has_many :league_picks
 
   validates :league,
     presence: true

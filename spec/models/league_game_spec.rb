@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe LeagueGame, type: :model do
   it { should belong_to(:league_week) }
   it { should belong_to(:league) }
+  it { should have_one(:league_pick) }
 
   it { should have_valid(:league_id).when(1, 2, 17) }
   it { should_not have_valid(:league_id).when("blah", 25.8, nil) }
@@ -17,7 +18,8 @@ RSpec.describe LeagueGame, type: :model do
     .when("September 3", "November 4", "December 28") }
   it { should_not have_valid(:date).when('', nil) }
 
-  it { should have_valid(:visitor_team).when("New England Patriots", "Atlanta Falcons") }
+  it { should have_valid(:visitor_team)
+    .when("New England Patriots", "Atlanta Falcons") }
   it { should_not have_valid(:visitor_team).when('', nil) }
 
   it { should have_valid(:home_team)
