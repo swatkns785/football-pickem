@@ -1,6 +1,7 @@
 class LeagueGame < ActiveRecord::Base
   belongs_to :league
   belongs_to :league_week
+  has_one :league_pick
 
   validates :league_id,
     presence: true,
