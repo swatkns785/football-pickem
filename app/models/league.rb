@@ -42,7 +42,7 @@ class League < ActiveRecord::Base
         if g.week_id == lw.week_id
           LeagueGame.create(league_id: lw.league_id,
                             league_week_id: lw.id,
-                            week_id: g.week_id,
+                            game_id: g.id,
                             day: g.day,
                             date: g.date,
                             visitor_team: g.visitor_team,

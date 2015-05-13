@@ -1,0 +1,13 @@
+<h3>Select one team per game below.</h3>
+
+<% form_for(@league_picks) do |f| %>
+  <% @league_games.each do |league_game| %>
+    <div>
+      <%= f.label :option, "#{league_game.visitor_team}" %>
+      <%= f.radio_button(league_game.visitor_team) %>
+      <%= f.label :option, "#{league_game.home_team}" %>
+      <%= f.radio_button :option, "#{league_game.home_team}" %>
+    </div>
+  <% end %>
+  <%= f.submit %>
+<% end %>

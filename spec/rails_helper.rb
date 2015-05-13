@@ -8,6 +8,7 @@ require File.join(File.dirname(__FILE__), 'support/valid_attribute')
 require File.join(File.dirname(__FILE__), 'support/factory_girl')
 require File.join(File.dirname(__FILE__), 'support/sign_in_helper')
 require File.join(File.dirname(__FILE__), 'support/create_league_helper')
+require File.join(File.dirname(__FILE__), 'support/seed_test_database_helper')
 require 'capybara/rspec'
 require 'database_cleaner'
 

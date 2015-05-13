@@ -1,13 +1,14 @@
 class LeagueGame < ActiveRecord::Base
   belongs_to :league
   belongs_to :league_week
+  belongs_to :game
   has_one :league_pick
 
   validates :league_id,
     presence: true,
     numericality: { only_integer: true }
 
-  validates :week_id,
+  validates :league_week_id,
     presence: true,
     numericality: { only_integer: true }
 
