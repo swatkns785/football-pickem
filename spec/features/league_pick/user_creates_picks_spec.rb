@@ -25,7 +25,6 @@ feature 'user creates picks', %q(
       click_link "Make Week #{league.league_weeks[0].week_id} Picks"
 
       expect(page).to have_content "Select one team per game below."
-
       choose('New England Patriots')
       click_button "Submit #{league.league_weeks[0].week_id} Picks"
 
