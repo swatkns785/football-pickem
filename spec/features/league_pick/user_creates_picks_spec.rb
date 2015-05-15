@@ -16,7 +16,7 @@ feature 'user creates picks', %q(
       seed_test_database_with_league_weeks_and_league_games
     end
 
-    scenario "I successfully create a week's picks", focus: true do
+    scenario "I successfully create a week's picks" do
       league = FactoryGirl.create(:league)
       member = FactoryGirl.create(:membership, league: league)
 
@@ -26,9 +26,9 @@ feature 'user creates picks', %q(
 
       expect(page).to have_content "Select one team per game below."
       choose('New England Patriots')
-      click_button "Submit #{league.league_weeks[0].week_id} Picks"
+      click_button "Submit Week #{league.league_weeks[0].week_id} Picks"
 
-      expect(page).to have_content "#{league.league_weeks[0].week_id} picks submitted successfully."
+      expect(page).to have_content "Week #{league.league_weeks[0].week_id} picks submitted successfully."
     end
   end
 

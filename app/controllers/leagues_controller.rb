@@ -8,7 +8,6 @@ class LeaguesController < ApplicationController
     @requests = @league.membership_requests
     @members = Membership.where(league_id: params[:id])
     @owner = Membership.find_by(user: current_user, league_id: params[:id], owner: true)
-
     @league_weeks = LeagueWeek.where(league_id: params[:id])
   end
 

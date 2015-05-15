@@ -1,5 +1,4 @@
 class MembershipsController < ApplicationController
-
   def create
     @request = MembershipRequest.last
     @league = League.find_by(id: @request.league_id)
@@ -21,5 +20,4 @@ class MembershipsController < ApplicationController
     flash[:alert] = "You have successfully left #{@league.title}."
     redirect_to league_path(@league)
   end
-
 end
