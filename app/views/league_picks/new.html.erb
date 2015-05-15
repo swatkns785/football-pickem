@@ -1,0 +1,18 @@
+<h3>Select one team per game below.</h3>
+
+<form method="post" action="/league_weeks/<%= "#{params[:league_week_id]}" %>/league_picks">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <% @league_games.each do |league_game| %>
+  <tr>
+    <td><input type="radio" name="league_game[<%= league_game.id %>]" value="<%= league_game.visitor_team %>" id="<%= league_game.visitor_team %>"></td>
+    <td><%= league_game.visitor_team %></td>
+    <td>@</td>
+    <td><%= league_game.home_team %></td>
+    <td><input type="radio" name="league_game[<%= league_game.id %>]" value="<%= league_game.home_team %>" id="<%= league_game.home_team %>"></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;<td>
+  </tr>
+  <% end %>
+  <tr><td align="center" colspan="5"><input type="submit" value="Submit Week <%= @league_week.id %> Picks"></td></tr>
+</form>

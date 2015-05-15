@@ -27,3 +27,7 @@
     <p><%= link_to 'Leave League', league_membership_path(@league, member), method: :delete %></p>
   <% end %>
 <% end %>
+
+<% @league_weeks.each do |league_week| %>
+  <%= link_to "Make Week #{league_week.week_id} Picks", new_league_week_league_pick_path(league_week) %>
+<% end %>

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :leagues
   has_many :membership_requests
   has_many :memberships
+  has_many :league_picks
 
   validates :first_name,
     presence: true

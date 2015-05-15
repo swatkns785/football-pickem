@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Membership, type: :model do
   it { should belong_to :user }
   it { should belong_to :league }
-  it { should have_many :league_picks }
 
   it { should have_valid(:league).when(League.new) }
   it { should_not have_valid(:league).when(nil) }

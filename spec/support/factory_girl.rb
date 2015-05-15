@@ -25,4 +25,13 @@ FactoryGirl.define do
     association :user
     association :league
   end
+
+  factory :week do
+    week_number 1
+  end
+
+  factory :league_pick do
+    association :league_game
+    association :membership
+  end
 end

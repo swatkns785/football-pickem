@@ -6,7 +6,8 @@ class LeagueWeek < ActiveRecord::Base
 
   validates :week_id,
     presence: true,
-    numericality: { only_integer: true }
+    numericality: { only_integer: true },
+    uniqueness: true
 
   validates :league_id,
     presence: true,

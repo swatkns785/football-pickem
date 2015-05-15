@@ -1,9 +1,7 @@
 class MembershipRequestsController < ApplicationController
-
   def create
     @league = League.find_by(id: params[:league_id])
-
-    @request = MembershipRequest.new
+    @request = MembershipRequest.new(lmr_params)
     @request.user = current_user
     @request.league = @league
     if @request.save
@@ -15,9 +13,7 @@ class MembershipRequestsController < ApplicationController
   end
 
   private
-
   def lmr_params
-    params.require(:league_membership_request).permit(:user_id, :league_id)
+    params.permit(:user_id, :league_id)
   end
-
 end

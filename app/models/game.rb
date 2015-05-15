@@ -1,5 +1,6 @@
 class Game < ActiveRecord::Base
   belongs_to :week
+  has_many :league_games
 
   validates :week_id,
     presence: true,
